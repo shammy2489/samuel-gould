@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Gould | Portfolio - Robotics & Mechatronics Engineer</title>
+    <meta name="description" content="Professional portfolio showcasing multidisciplinary engineering projects in robotics and mechatronics">
+    <meta name="keywords" content="robotics portfolio, mechatronics engineer, embedded systems, PCB design, CAD, ROS">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .skill-category {
+            transition: all 0.3s ease;
+        }
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+        .text-out {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .text-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .typing {
+            border-right: 2px solid white;
+            animation: blink 0.7s infinite step-end;
+        }
+
+        @keyframes blink {
+            0%, 100% { border-color: transparent; }
+            50% { border-color: white; }
+        }
+    </style>
+
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-2xl font-bold text-gray-800">Samuel Gould</a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#profile" class="nav-link">Profile</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#employment" class="nav-link">Employment</a>
+                    <a href="#experiences" class="nav-link">Experiences</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="md:hidden focus:outline-none">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Landing page -->
+    <section class="relative h-screen px-6 overflow-hidden text-white">
+
+        <!-- SLIDES -->
+        <div id="slideshow" class="absolute inset-0">
+            <img src="Photos/Landing/ball_group.jpg" class="slide active">
+            <img src="Photos/Landing/ball_smaller.jpg" class="slide">
+            <img src="Photos/Landing/basketball.JPG" class="slide">
+            <img src="Photos/Landing/escapists.jpg" class="slide">
+            <img src="Photos/Landing/farm_boys.jpg" class="slide">
+            <img src="Photos/Landing/farm_group.jpg" class="slide">
+            <img src="Photos/Landing/hall_photo.jpg" class="slide">
+            <img src="Photos/Landing/hc.jpeg" class="slide">
+            <img src="Photos/Landing/hc_vd.jpg" class="slide">
+            <img src="Photos/Landing/interfloor_deco.JPG" class="slide">
+            <img src="Photos/Landing/lower_rugby.jpg" class="slide">
+            <img src="Photos/Landing/oztag.JPG" class="slide">
+            <img src="Photos/Landing/oztag_2.JPG" class="slide">
+            <img src="Photos/Landing/secret_santa.jpg" class="slide">
+            <img src="Photos/Landing/tamarama_vd.jpg" class="slide">
+            <img src="Photos/Landing/volleyball.JPG" class="slide">
+            <img src="Photos/Landing/yoshi_farewell.jpg" class="slide">
+        </div>
+
+        <!-- DARK OVERLAY -->
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <!-- NAVIGATION ARROWS -->
+    <button id="prevSlide"
+        class="absolute left-6 top-1/2 -translate-y-1/2 z-20
+            bg-black/40 hover:bg-black/60
+            rounded-full p-3 transition"
+        aria-label="Previous slide">
+        ❮
+    </button>
+
+    <button id="nextSlide"
+        class="absolute right-6 top-1/2 -translate-y-1/2 z-20
+            bg-black/40 hover:bg-black/60
+            rounded-full p-3 transition"
+        aria-label="Next slide">
+        ❯
+    </button>
+
+        <!-- CONTENT -->
+        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center"
+            data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Samuel Gould</h1>
+
+            <h2 id="heroText"
+                class="text-xl md:text-2xl font-light px-4 py-2 rounded bg-black/30 backdrop-blur-sm overflow-hidden whitespace-nowrap">
+            </h2>
+        </div>
+    </section>
+
+    <!-- Profile -->
+    <section id="profile" class="py-20 px-6 bg-white">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Profile</h2>
+        
+        <div class="max-w-3xl mx-auto flex flex-col md:flex-row items-start gap-8 mb-12" data-aos="fade-up">
+
+            <div class="w-full md:w-1/3 flex-shrink-0">
+                <img 
+                    src="Photos/zoomed_profile_pic.jpg" 
+                    alt="Profile Picture of Samuel Gould" 
+                    class="rounded-full w-64 h-64 object-cover mx-auto shadow-xl" 
+                    style="object-fit: cover; "
+                >
+            </div>
+            
+            <div class="w-full md:w-2/3">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    I am a Bachelor of Engineering (Honours) student majoring in Robotics and Mechatronics, driven by a passion for automation, robotics, and real-world problem-solving. 
+                    I am always eager to learn more about the field of robotics and expand my current skillset through academics, extracurriculars, projects or industry placement. 
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    I also like to play footy with mates, go to the beach, and relax in nature on the farm.
+                </p>
+            </div>
+
+        </div> 
+    </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Projects</h2>
+
+            <!-- Robotic Arm Connect 4 -->
+            <div class="group flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden mb-16
+                        transition-all duration-300 ease-out
+                        hover:-translate-y-1 hover:shadow-2xl"
+                data-aos="fade-up"
+                data-aos-delay="200">
+
+                <div class="md:w-1/2 overflow-hidden">
+                    <img src="Photos/RAC4_cover.jpg"
+                        alt="Robotic Arm Connect 4"
+                        class="w-full h-full object-cover
+                                transition-transform duration-500 ease-out
+                                group-hover:scale-105">
+                </div>
+
+                <div class="md:w-1/2 p-8 md:p-12 flex flex-col">
+                    <div class="flex-1">
+                        <h3 class="font-bold mb-4 text-[clamp(1.75rem,2vw+1rem,3rem)]">Robotic Arm Connect 4</h3>
+                        <p class="text-gray-600 mb-6 text-[clamp(0.95rem,1.5vw+0.5rem,1.25rem)] leading-relaxed">
+                            Designed and integrated an autonomous robotic system capable of detecting, picking, 
+                            and placing small plastic objects using a UR5e robotic arm. 
+                            The project combined computer vision, robot control, mechanical design, and 
+                            embedded systems under strict cost, space, and reliability constraints.
+                        </p>
+                        <h3 class="font-semibold mb-3 text-[clamp(1.25rem,1.6vw+0.6rem,1.75rem)]">My Focus - Robotics Actuation & Embedded Control</h3>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 text-[clamp(0.95rem,1.5vw+0.5rem,1.25rem)] leading-relaxed">
+                            <li>Developed Arduino-based servo control for a custom robotic gripper</li>
+                            <li>Implemented real-time serial communication between MATLAB and embedded hardware</li>
+                            <li>Integrated end-effector actuation into the robot's autonomous control pipeline</li>
+                            <li>Debugged hardware-software timing, torque limits, and repeatability issues</li>
+                        </ul>
+                    </div>
+
+                    <!-- Span tags stick to bottom -->
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">CAD</span>
+                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Arduino/C++</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Design Process</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Self-Watering Plant -->
+            <div class="group flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden mb-16
+                        transition-all duration-300 ease-out
+                        hover:-translate-y-1 hover:shadow-2xl"
+                data-aos="fade-up"
+                data-aos-delay="200">
+
+                <div class="md:w-1/2 overflow-hidden">
+                    <img src="Photos/buildathon.jpg"
+                        alt="Robotic Arm Connect 4"
+                        class="w-full h-full object-cover
+                                transition-transform duration-500 ease-out
+                                group-hover:scale-105">
+                </div>
+                <div class="md:w-1/2 p-8 md:p-12 flex flex-col">
+                    <div class="flex-1">
+                        <h3 class="font-bold mb-4 text-[clamp(1.75rem,2vw+1rem,3rem)]">Self-Watering Plant</h3>
+                        <p class="text-gray-600 mb-6 text-[clamp(0.95rem,1.5vw+0.5rem,1.25rem)] leading-relaxed">
+                            Designed and built an autonomous self-watering plant system that monitors soil conditions 
+                            and delivers water only when required. 
+                            The project combined embedded sensing, control logic, safe electrical design, and mechanical 
+                            integration with a natural environment, focusing on reliability and autonomy.
+                            The system operated independently using real-time sensor feedback to maintain plant 
+                            health while minimising water usage.
+                        </p>
+                        <h3 class="font-semibold mb-3 text-[clamp(1.25rem,1.6vw+0.6rem,1.75rem)]">My Focus - Embedded Control, Sensing & System Safety</h3>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 text-[clamp(0.95rem,1.5vw+0.5rem,1.25rem)] leading-relaxed">
+                            <li>Developed autonomous watering logic in C++ (Arduino) based on real-time soil moisture and water level data</li>
+                            <li>Integrated soil moisture and water level sensors to enable closed-loop control</li>
+                            <li>Designed and wired a water-safe electrical system, isolating electronics from fluid exposure</li>
+                            <li>Controlled a water pump through embedded logic to ensure precise and repeatable actuation</li>
+                            <li>Debugged sensor drift, threshold tuning, and false triggering under real-world conditions</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Bio-Integration</span>
+                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Arduino/C++</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Collaboration</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RC Car -->
+            <div class="group flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden mb-16
+                        transition-all duration-300 ease-out
+                        hover:-translate-y-1 hover:shadow-2xl"
+                data-aos="fade-up"
+                data-aos-delay="200">
+
+                <div class="md:w-1/2 overflow-hidden">
+                    <img src="Photos/rc_car.jpg"
+                        alt="Robotic Arm Connect 4"
+                        class="w-full h-full object-cover
+                                transition-transform duration-500 ease-out
+                                group-hover:scale-105">
+                </div>
+                <div class="md:w-1/2 p-8 md:p-12 flex flex-col">
+                    <div class="flex-1">
+                        <h3 class="font-bold mb-4 text-[clamp(1.75rem,2vw+1rem,3rem)]">Remote Control Car</h3>
+                        <p class="text-gray-600 mb-6 text-[clamp(0.95rem,1.5vw+0.5rem,1.25rem)] leading-relaxed">
+                            Designed and built a multi-mode robotic car capable of both remote operation and autonomous driving. 
+                            The system supported line following, obstacle avoidance, object following, 
+                            and speed/acceleration control, demonstrating core principles of mobile robotics and embedded control.
+                            The project required close integration of sensing, real-time decision-making, motor control, 
+                            and mechanical design on a compact wheeled platform.
+                        </p>
+                        <h3 class="font-semibold mb-3 text-[clamp(1.25rem,1.6vw+0.6rem,1.75rem)]">My Focus - Autonomous Navigation, Control & Integration</h3>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 text-[clamp(0.95rem,1.5vw+0.5rem,1.25rem)] leading-relaxed">
+                            <li>Implemented autonomous behaviours including line following, obstacle avoidance, object tracking, and self-driving logic</li>
+                            <li>Developed embedded control logic in C++ (Arduino) for real-time sensor processing and motor actuation</li>
+                            <li>Integrated IR and ultrasonic sensors for environmental perception and navigation</li>
+                            <li>Assembled an acrylic chassis with a two-wheel differential drive and supporting caster wheel</li>
+                            <li>Tuned motor driver parameters to achieve smooth speed and acceleration transitions</li>
+                            <li>Debugged sensor noise, timing conflicts, and control instability across multiple operating modes</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Sensor integration</span>
+                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Arduino/C++</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Motor contol</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sumobots -->
+            <div class="group flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden mb-16
+                        transition-all duration-300 ease-out
+                        hover:-translate-y-1 hover:shadow-2xl"
+                data-aos="fade-up"
+                data-aos-delay="200">
+
+                <div class="md:w-1/2 overflow-hidden">
+                    <img src="Photos/sumobots.png"
+                        alt="Robotic Arm Connect 4"
+                        class="w-full h-full object-cover
+                                transition-transform duration-500 ease-out
+                                group-hover:scale-105">
+                </div>
+                <div class="md:w-1/2 p-8 md:p-12 flex flex-col">
+                    <div class="flex-1">
+                        <h3 class="font-bold mb-4 text-[clamp(1.75rem,2vw+1rem,3rem)]">Sumobots</h3>
+                        <p class="text-gray-600 mb-6 text-[clamp(0.95rem,1.5vw+0.5rem,1.25rem)] leading-relaxed">
+                            Designed and built an autonomous sumobot capable of detecting, tracking, and 
+                            physically pushing an opponent out of a competition ring. 
+                            The robot was fully self-contained and operated under strict competition constraints, 
+                            including a 1 kg mass limit, fixed arena size, and fully autonomous operation. 
+                            The project required tight integration of mechanical design, embedded electronics, 
+                            real-time sensing, and control logic, closely reflecting real-world autonomous robotics development.
+                        </p>
+                        <h3 class="font-semibold mb-3 text-[clamp(1.25rem,1.6vw+0.6rem,1.75rem)]">My Focus - Autonomous Control, Electronics & Integration</h3>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 text-[clamp(0.95rem,1.5vw+0.5rem,1.25rem)] leading-relaxed">
+                            <li>Developed autonomous sensing and navigation logic in C++ (Arduino) using ultrasonic and infrared sensors</li>
+                            <li>Implemented opponent detection, edge avoidance, and decision-based motion control</li>
+                            <li>Debugged sensor noise, false positives, and real-time response issues under competition conditions</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">CAD</span>
+                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Arduino/C++</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Design Process</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employment -->
+    <section id="employment" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-16 text-center">Employment</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Farm Hand -->
+                <div class="border-l-4 border-indigo-500 pl-6 py-2 bg-gray-50 hover:-translate-y-1 hover:shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-1">Farm Hand</h3>
+                    <p class="text-gray-500 mb-2">LR & KM Gould • 2010 - Present</p>
+                    <p class="text-gray-600">
+                        Growing up on a family farm, I have gained hands-on experience in all aspects of mixed farming operations.
+                        My responsibilities include operating and maintaining heavy machinery such as tractors, headers, and trucks, as well as light vehicles including utes, motorbikes, and cars. 
+                        I have been actively involved in sheep management, from lambing through to market preparation, ensuring the health and well-being of livestock. 
+                        Additionally, I handle general farm maintenance, including fencing, shed repairs, and machinery upkeep, contributing to the efficiency and sustainability of the property.
+                        This role has strengthened my problem-solving abilities, adaptability, and work ethic, while giving me a deep appreciation for agricultural operations and rural life.
+                    </p>
+                </div>
+
+                <!-- Produce Assistant -->
+                <div class="border-l-4 border-indigo-500 pl-6 py-2 bg-gray-50 hover:-translate-y-1 hover:shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-1">Produce Assistant</h3>
+                    <p class="text-gray-500 mb-2">Bernadis • 2021 - 2023</p>
+                    <p class="text-gray-600">
+                        As a Produce Assistant, I was responsible for maintaining the quality, presentation, and organisation of fresh produce to ensure a positive shopping experience for customers. 
+                        My role involved inspecting and rotating stock to uphold quality standards, accurately pricing and displaying products, and assisting customers with inquiries and product selection.
+                        I also collaborated with team members to meet restocking deadlines, fulfilled bulk orders for local businesses, and operated in a fast-paced, sometimes hazardous environment requiring attention to safety procedures. 
+                        Through this role, I developed strong teamwork, problem-solving, and customer service skills while gaining hands-on experience in retail operations.</p>
+                </div>
+
+                <!-- Academic Tutor -->
+                <div class="border-l-4 border-indigo-500 pl-6 py-2 bg-gray-50 hover:-translate-y-1 hover:shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-1">Academic Tutor</h3>
+                    <p class="text-gray-500 mb-2">Multiple • 2025 - Present</p>
+                    <ul class="list-disc pl-5 text-md text-gray-600 space-y-2">
+                        <li>Tutoring with Learnmate, Cluey, Alchemy, and privately</li>
+                        <li>Created personalised and structured sessions </li>
+                        <li>Assisted students from year 9-12 in Mathematics, Chemistry and Physics</li>
+                        <li>Educated students across multiple curriculums in person and online</li>
+                        <li>Communicated fundamental knowledge about each subject and built upon in successive lessons</li>
+                        <li>Guided students by focusing on conceptual understanding, exam techniques, and problem-solving skills</li>
+                    </ul>
+                </div>
+
+                <!-- Venues and Events Crew -->
+                <div class="border-l-4 border-indigo-500 pl-6 py-2 bg-gray-50 hover:-translate-y-1 hover:shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-1">Venues and Events Crew</h3>
+                    <p class="text-gray-500 mb-2">UNSW • 2025 - Present</p>
+                    <ul class="list-disc pl-5 text-md text-gray-600 space-y-2">
+                        <li>Managed large-scale events valued at over $10,000+ for dozens of clients, engaging tens of thousands of participants</li>
+                        <li>Worked in a medium-sized team to successfully set up and pack down various venues and events on campus at UNSW Kensington campus</li>
+                        <li>Employed strategic time management and open communication to achieve the goals of clients</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiences -->
+    <section id="experiences" class="py-20 px-6 bg-gray-200">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Experiences</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">       
+
+                <!-- Agricycle -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Photos/agricycle.png" alt="Robotic Arm" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Agricycle</h3>
+                        <p class="text-gray-600 text-sm mb-4">2025</p>
+                        <p class="text-gray-700 mb-4">Created an incinerator to dispose of feminine products in Uganda</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">CAD</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Design Process</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Collaboration</span>
+                            </div>
+                            <ul class="list-disc pl-5 text-sm text-gray-600 space-y-2">
+                                <li>Created various CAD models for incinerator iterations</li>
+                                <li>Generated multiple solutions then narrowed them down to one based on a multitude of factors</li>
+                                <li>Prototyped and tested incinerator with teammates</li>
+                            </ul>
+                        </div>
+                    </div>                    
+                </div>     
+                
+                <!-- Create Events Subcommittee -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Photos/create_subcom.jpg" alt="Robotic Arm" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Create Events Subcommittee</h3>
+                        <p class="text-gray-600 text-sm mb-4">2025</p>
+                        <p class="text-gray-700 mb-4">Responsible for running the external events for Create</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Communication</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Organisation</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Collaboration</span>
+                            </div>
+                            <ul class="list-disc pl-5 text-sm text-gray-600 space-y-2">
+                                <li>Organised and ran multiple events for 100's of participants</li>
+                                <li>Engaged with other societies and industry to expand the reach of Create</li>
+                                <li>Produced clear and organised meeting minutes within Create and when collaborating with other UNSW societies for events</li>
+                            </ul>
+                        </div>
+                    </div>                    
+                </div> 
+
+                <!-- Hall Floor Representative -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Photos/floor_rep.JPG" alt="Robotic Arm" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Hall Floor Representative</h3>
+                        <p class="text-gray-600 text-sm mb-4">2025</p>
+                        <p class="text-gray-700 mb-4">Responsible for fostering community engagement</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Communication</span>
+                                <span class="bg-lime-100 text-lime-800 text-xs px-3 py-1 rounded-full">Leadership</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Organisation</span>
+                            </div>
+                            <ul class="list-disc pl-5 text-sm text-gray-600 space-y-2">
+                                <li>Organised and led fun and engaging weekly floor suppers for 30+ residents</li>
+                                <li>Represented floor group in interfloor activities</li>
+                                <li>Captained and won interfloor floor decoration</li>
+                                <li>Led and won interfloor sports competition</li>
+                            </ul>
+                        </div>
+                    </div>                    
+                </div> 
+
+                <!-- Ottobots -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Photos/ottobot.jpg" alt="Robotic Arm" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Ottobots</h3>
+                        <p class="text-gray-600 text-sm mb-4">2025</p>
+                        <p class="text-gray-700 mb-4">Assembled and coded a working ottobot</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-orange-100 text-orange-800 text-xs px-3 py-1 rounded-full">Mechanical</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Electrical</span>
+                                <span class="bg-teal-100 text-teal-800 text-xs px-3 py-1 rounded-full">Arduino/C++</span>
+                            </div>
+                            <ul class="list-disc pl-5 text-sm text-gray-600 space-y-2">
+                                <li>Assembled mechanical and electrical components using manual and own knowledge</li>
+                                <li>Completed wiring and circuit setup to maintain a sleek design</li>
+                                <li>Coded ottobot with ultrasonic sensor for dancing and moving mechanics when in range</li>
+                            </ul>
+                        </div>
+                    </div>                    
+                </div> 
+
+                <!-- ACE -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Photos/ACE.png" alt="Robotic Arm" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">ACE</h3>
+                        <p class="text-gray-600 text-sm mb-4">2025</p>
+                        <p class="text-gray-700 mb-4">Applied Consulting for Engineers taught the industry standards and key skills of consulting. 
+                            Mock Case competition on BHP</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-cyan-100 text-cyan-800 text-xs px-3 py-1 rounded-full">Pitching</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Organisation</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Collaboration</span>
+                            </div>
+                            <ul class="list-disc pl-5 text-sm text-gray-600 space-y-2">
+                                <li>Achieved 2nd out of 8 when pitching to our mentors</li>
+                                <li>Identified key problems for client company</li>
+                                <li>Generated solutions and implemented a strategy to overcome problems</li>
+                                <li>Used financial modelling and feasibility assessments for impact of strategy</li>
+                                <li>Performed risk evaluation and mitigation planning</li>
+                            </ul>
+                        </div>
+                    </div>                    
+                </div> 
+
+                <!-- Leadership Foundations Program -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Photos/Leadership.jpg" alt="Robotic Arm" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Leadership Foundations Program</h3>
+                        <p class="text-gray-600 text-sm mb-4">2025</p>
+                        <p class="text-gray-700 mb-4">UNSW Employability workshops teaching key leadership skills</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Communication</span>
+                                <span class="bg-lime-100 text-lime-800 text-xs px-3 py-1 rounded-full">Leadership</span>
+                                <span class="bg-fuchsia-100 text-fuchsia-800 text-xs px-3 py-1 rounded-full">Interpersonal</span>
+                            </div>
+                            <ul class="list-disc pl-5 text-sm text-gray-600 space-y-2">
+                                <li>Actively listened and contributed to group discussions</li>
+                                <li>Developed key skills such as self-awareness, wellbing, resilience, 
+                                    effective team relationships, creating inclusive teams, and conflict management</li>
+                                <li>Reflected on different applications of the taught key skills to become an effective leader</li>
+                            </ul>
+                        </div>
+                    </div>                    
+                </div> 
+
+                <!-- NDY Case Comp -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Photos/NDY.png" alt="Robotic Arm" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">NDY Case Comp</h3>
+                        <p class="text-gray-600 text-sm mb-4">2025</p>
+                        <p class="text-gray-700 mb-4">Created and pitched a solution to NDY about arising problems at Barangaroo</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-cyan-100 text-cyan-800 text-xs px-3 py-1 rounded-full">Pitching</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Organisation</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Collaboration</span>
+                            </div>
+                            <ul class="list-disc pl-5 text-sm text-gray-600 space-y-2">
+                               <li>Achieved 3rd out of 40 when pitching to NDY</li>
+                               <li>Focussed on risks and mitigations for our implementation strategy</li>
+                               <li>Created a slide deck well-suited to NDY theme</li>
+                               <li>Collaborated and coordinated in a group of 5 throughout process</li>
+                            </ul>
+                        </div>
+                    </div>                    
+                </div> 
+
+                <!-- SIM -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Photos/SIM.jpg" alt="SIM Peer Mentoring" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">SIM Peer Mentoring</h3>
+                        <p class="text-gray-600 text-sm mb-4">2025</p>
+                        <p class="text-gray-700 mb-4">Mentored a group of students to develop and pitch a solution to one of the UN's SDG's.</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Communication</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Organisation</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Mentoring</span>
+                            </div>
+                            <ul class="list-disc pl-5 text-sm text-gray-600 space-y-2">
+                                <li>Coordinated a multidisciplinary team to focus on the primary goal</li>
+                                <li>Led our team through a problem analysis, followed by solution ideation and implementation</li>
+                                <li>Provided guidance and feedback to my mentees to improve their pitch</li>
+                            </ul>
+                        </div>
+                    </div>                    
+                </div> 
+
+                <!-- Hall Secretary -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Photos/secretary.jpg" alt="Hall Secretary" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Hall Secretary</h3>
+                        <p class="text-gray-600 text-sm mb-4">2025 - 2026</p>
+                        <p class="text-gray-700 mb-4">Responsible for the clear flow of communication for our community</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Communication</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Organisation</span>
+                                <span class="bg-lime-100 text-lime-800 text-xs px-3 py-1 rounded-full">Leadership</span>
+                            </div>
+                            <ul class="list-disc pl-5 text-sm text-gray-600 space-y-2">
+                                <li>Coordinated with Staff, fellow Executive, Housing Committee and other College leadership to ensure the clear flow of operations and communication to all residents</li>
+                                <li>Organised over 500+ emails to create a cleaner and readable inbox</li>
+                                <li>Created visually appealing weekly emails for all residents, informing them about upcoming events, college achievements and resident accomplishments</li>
+                                <li>Produced clear and organised meeting minutes</li>
+                            </ul>
+                        </div>
+                    </div>                    
+                </div>
+                
+                <!-- Create Events Director
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/technology/640x360/2" alt="Create Events Director" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Create Events Director</h3>
+                        <p class="text-gray-600 text-sm mb-4">2025-2026</p>
+                        <p class="text-gray-700 mb-4">Responsible for running the external events for Create</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"></span>
+                                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full"></span>
+                                <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full"></span>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>                    
+                </div>  -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Education (have key classes that have taught key skills) -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-gray-900 text-white">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">
+                Open to Opportunities
+            </h2>
+
+            <div class="mb-12 text-center" data-aos="fade-up">
+                <p class="text-xl mb-12">
+                    I'm always keen to explore new opportunities in robotics, automation, and real-world engineering,
+                    whether through internships, collaborative projects, innovative challenges, or guidance. 
+                    If you're looking for someone who's curious, hands-on, and makes the most out of every opportunity, I'd love to connect. 
+                    Reach out using the form below and let's start a conversation.
+                </p>
+
+                <!-- FORM WRAPPER -->
+                <div class="relative max-w-2xl mx-auto">
+
+                    <!-- CONTACT FORM -->
+                    <form
+                        id="contactForm"
+                        action="https://formspree.io/f/xgvgbwvg"
+                        method="POST"
+                        class="grid grid-cols-1 gap-6 text-left"
+                    >
+                        <!-- Hidden config input (THIS is where it goes) -->
+                        <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+
+                        <!-- Name -->
+                        <div>
+                            <label class="block mb-2 text-sm font-medium">Name</label>
+                            <input
+                                type="text"
+                                name="name"
+                                required
+                                class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700
+                                    focus:outline-none focus:border-blue-500"
+                            >
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label class="block mb-2 text-sm font-medium">Email</label>
+                            <input
+                                type="email"
+                                name="email"
+                                required
+                                class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700
+                                    focus:outline-none focus:border-blue-500"
+                            >
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label class="block mb-2 text-sm font-medium">Message</label>
+                            <textarea
+                                name="message"
+                                rows="5"
+                                required
+                                class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700
+                                    focus:outline-none focus:border-blue-500 resize-none"
+                            ></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button
+                            type="submit"
+                            id="submitBtn"
+                            class="bg-blue-600 hover:bg-blue-700 transition duration-300
+                                text-white font-medium py-3 px-6 rounded-lg
+                                flex items-center justify-center gap-3"
+                        >
+                            <span id="btnText">Send Message</span>
+
+                            <!-- Loading Spinner -->
+                            <svg
+                                id="loadingSpinner"
+                                class="hidden w-5 h-5 animate-spin"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                            >
+                                <circle
+                                    class="opacity-25"
+                                    cx="12"
+                                    cy="12"
+                                    r="10"
+                                    stroke="currentColor"
+                                    stroke-width="4"
+                                />
+                                <path
+                                    class="opacity-75"
+                                    fill="currentColor"
+                                    d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                                />
+                            </svg>
+                        </button>
+                    </form>
+
+                    <!-- SUCCESS MESSAGE -->
+                    <div
+                        id="successMessage"
+                        class="hidden absolute inset-0 flex flex-col items-center justify-center
+                            text-center bg-gray-900 rounded-lg"
+                        data-aos="zoom-in"
+                    >
+                        <h3 class="text-2xl font-bold mb-4">Message Sent</h3>
+                        <p class="text-gray-300">
+                            Thanks for reaching out - I'll get back to you shortly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-8 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; Sam Gould 2025</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/samuel-gould6/" target="_blank" class="hover:text-white transition duration-300">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+        
+        // Mobile menu toggle
+        document.querySelector('button[aria-label="menu"]').addEventListener('click', function() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('flex');
+            nav.classList.toggle('flex-col');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-16');
+            nav.classList.toggle('left-0');
+            nav.classList.toggle('right-0');
+            nav.classList.toggle('bg-white');
+            nav.classList.toggle('p-4');
+            nav.classList.toggle('space-y-4');
+            nav.classList.toggle('space-x-0');
+            nav.classList.toggle('shadow-md');
+        });
+    </script>
+
+    <script>
+        AOS.init({
+            duration: 700,
+            easing: "ease-out-cubic",
+            once: true,
+        });
+    </script>
+
+    <script>
+        const form = document.getElementById("contactForm");
+        const submitBtn = document.getElementById("submitBtn");
+        const btnText = document.getElementById("btnText");
+        const spinner = document.getElementById("loadingSpinner");
+        const successMessage = document.getElementById("successMessage");
+
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            // Loading state
+            btnText.textContent = "Sending...";
+            spinner.classList.remove("hidden");
+            submitBtn.disabled = true;
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        Accept: "application/json",
+                    },
+                });
+
+                if (response.ok) {
+                    // Hide form
+                    form.classList.add("opacity-0", "pointer-events-none");
+
+                    // Show success message
+                    successMessage.classList.remove("hidden");
+
+                    // Trigger AOS animation
+                    if (window.AOS) {
+                        AOS.refreshHard();
+                    }
+                } else {
+                    alert("Something went wrong. Please try again.");
+                }
+            } catch (error) {
+                alert("Network error. Please try again.");
+            }
+        });
+    </script>
+    <script>
+        const slides = document.querySelectorAll("#slideshow .slide");
+        const prevBtn = document.getElementById("prevSlide");
+        const nextBtn = document.getElementById("nextSlide");
+        const heroText = document.getElementById("heroText");
+
+        let currentSlide = 0;
+        const intervalTime = 5000;
+        let slideshowInterval;
+
+        // Texts for the typewriter
+        const heroTexts = [
+            "Robotics & Mechatronics Engineer",
+            "Real-world Application",
+            "Passionate About Robotics, Automation & Design",
+            "Project-based experience",
+            "Ideation to Implementation"
+        ];
+
+        let typingIndex = 0;
+        let charIndex = 0;
+        let typingTimeout;
+
+        function typeText(text) {
+            heroText.textContent = text.slice(0, charIndex);
+            heroText.classList.add("typing");
+
+            if (charIndex < text.length) {
+                charIndex++;
+                typingTimeout = setTimeout(() => typeText(text), 50);
+            } else {
+                heroText.classList.remove("typing");
+            }
+        }
+
+        function showSlide(index) {
+            slides[currentSlide].classList.remove("active");
+
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add("active");
+
+            // Start typewriter
+            clearTimeout(typingTimeout);
+            charIndex = 0;
+            typeText(heroTexts[currentSlide % heroTexts.length]);
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+            resetInterval();
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+            resetInterval();
+        }
+
+        function startSlideshow() {
+            slideshowInterval = setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, intervalTime);
+        }
+
+        function resetInterval() {
+            clearInterval(slideshowInterval);
+            startSlideshow();
+        }
+
+        prevBtn.addEventListener("click", prevSlide);
+        nextBtn.addEventListener("click", nextSlide);
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "ArrowLeft") prevSlide();
+            if (e.key === "ArrowRight") nextSlide();
+        });
+
+        // Initialize
+        typeText(heroTexts[0]);
+        startSlideshow();
+    </script>
+
+</body>
+</html>
